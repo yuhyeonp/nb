@@ -3,17 +3,17 @@
 {% block content %}
     <div class="timeline">
         <form id="join-form" action="/auth/join" method="post">
-            <div class="input-group">
+            <div class="form-group">
                 <label for="join-email">이메일</label>
-                <input id="join-email" type="email" name="email"></div>
-            <div class="input-group">
+                <input id="join-email" type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"></div>
+            <div class="form-group">
                 <label for="join-nick">닉네임</label>
-                <input id="join-nick" type="text" name="nick"></div>
-            <div class="input-group">
+                <input id="join-nick" type="text" name="nick" class="form-control"></div>
+            <div class="form-group">
                 <label for="join-password">비밀번호</label>
-                <input id="join-password" type="password" name="password">
+                <input id="join-password" type="password" name="password" class="form-control" placeholder="Password">
             </div>
-            <button id="join-btn" type="submit" class="btn">회원가입</button>
+            <button id="join-btn" type="submit" class="btn btn-primary">회원가입</button>
         </form>
     </div>
 {% endblock %}

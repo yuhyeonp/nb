@@ -5,10 +5,72 @@
         <title>{{title}}</title>
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="/bootstrap.min.css">
     </head>
     <body>
-        <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="/">LEGAL SERVICES LINK</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Post A Project</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Open Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Search Attorneys</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pending Applications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Saved Attorneys</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Review Attorneys</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Profile</a>
+                </li>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Notification Settings</a>
+                </li> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Log Out</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+        </nav>
+        <div class="jumbotron">
             <div class="profile-wrap">
                 <div class="profile">
                     {% if user and user.id %}
@@ -26,23 +88,23 @@
                     <a id="logout" href="/auth/logout" class="btn">로그아웃</a>
                 {% else %}
                     <form id="login-form" action="/auth/login" method="post">
-                        <div class="input-group">
+                        <div class="form-group">
                             <label for="email">이메일</label>
-                            <input id="email" type="email" name="email" required autofocus>
+                            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required autofocus>
                         </div>
-                        <div class="input-group">
-                            <label for="password">비밀번호</label>
-                            <input id="password" type="password" name="password" required>
+                        <div class="form-group">
+                            <label for=password">비밀번호</label>
+                            <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
                         </div>
-                        <a id="join" href="/join" class="btn">회원가입</a>
-                        <button id="login" type="submit" class="btn">로그인</button>
-                        <a id="kakao" href="/auth/kakao" class="btn">카카오톡</a>
+                        <a id="join" href="/join" class="btn btn-primary" role="button">회원가입</a>
+                        <button id="login" type="submit" class="btn btn-secondary">로그인</button>
+                        <a id="kakao" href="/auth/kakao" class="btn btn-outline-primary" role="button">카카오톡</a>
                     </form>
                 {% endif %}
                 </div>
-                <footer>
+                <footer class="blockquote-footer">
                     Made by&nbsp;
-                    <a href="https://www.zerocho.com" target="_blank">zerocho</a>
+                    <a href="#" target="_blank">yuhyeonp</a>
                 </footer>
             </div>
             {% block content %}
