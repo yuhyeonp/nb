@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>{{title}}</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="bootstrap.min.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -25,28 +29,17 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Open Projects</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Search Attorneys</a>
-                </li>
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Attorneys</a>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Search Attorneys</a>
+                      <a class="dropdown-item" href="#">Review Attorneys</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
+                      <a class="dropdown-item" href="#">Saved Attorneys</a>
                     </div>
-                </li> -->
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pending Applications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Saved Attorneys</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Review Attorneys</a>
-                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">My Profile</a>
@@ -109,6 +102,40 @@
             </div>
             {% block content %}
             {% endblock %}
+        </div>
+        <div class="jumbotron">
+            <form>
+                <fieldset>
+                    <legend>Dashboard</legend>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Post Your Legal Needs</button>
+                </fieldset>
+            </form>
+            <!-- <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-active">
+                    <td colspan="4" style="text-align:center;">* The acceptance of an attorney's application does not create an attorney-client relationship. You must hire an attroney off-line before an attorney-client relationship is established.*</td>
+                  </tr>
+                </tbody>
+            </table>      -->
+            <div class="alert alert-dismissible alert-warning" style="margin-top:1rem; text-align:center;">
+                <p class="mb-0">* The acceptance of an attorney's application does not create an attorney-client relationship. You must hire an attroney off-line before an attorney-client relationship is established.*</p>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <form>
+                <fieldset>
+                    <legend>Post Your Legal Needs</legend>
+                    <div class="form-group">
+                        <label for="exampleTextarea">Describe Your Legal Need</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                    </div>
+                </fieldset>
+            </form>    
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script>
