@@ -33,11 +33,13 @@
                     {% if not followerIdList.includes(twit.User.id) and twit.User.id !== user.id %}
                         <button class="twit-follow btn btn-primary">팔로우하기</button>
                     {% endif %}
-                    <div class="twit-content">{{twit.content}}</div>
+                    <div class="twit-content">{{twit.id}}&nbsp;{{twit.content}}</div>
                     {% if twit.img %}
                         <div class="twit-img"><img src="{{twit.img}}" alt="섬네일"></div>
                     {% endif %}
-                    <!-- <button class="btn btn-secondary btn-sm">삭제</button> -->
+                    {% if twit.User.id === user.id %}
+                        <button id="twit-del-btn" class="btn btn-secondary btn-sm">삭제</button>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
@@ -78,6 +80,17 @@
                                 });
                         }
                     }
+                }
+            });
+        });
+        document.querySelectorAll('#twit-del-btn').forEach((tag) => {
+            tag.addEventListener('click', async () => {
+                const postId = tag.parentNode.querySelector('.twit-id').value;
+                try {
+                    await axios.delete(`/post/${postId}`);
+                    location.reload();
+                } catch(err) {
+                    console.error(err);
                 }
             });
         });
