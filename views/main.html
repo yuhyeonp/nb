@@ -4,9 +4,9 @@
     <div class="timeline">
         {% if user %}
             <div>
-                <form id="twit-form" action="/post" method="post" enctype="multipart/form-data">
+                <form id="twit-form" action="/post" method="post" enctype="multipart/form-data" style="padding: 10px; overflow: hidden;">
                     <div class="input-group">
-                        <textarea id="twit" name="content" maxlength="140"></textarea>
+                        <textarea id="twit" name="content" maxlength="140" style="width: 100%; min-height: 72px;"></textarea>
                     </div>
                     <div class="img-preview">
                         <img id="img-preview" src="" style="display: none;" width="250" alt="미리보기">
@@ -15,14 +15,14 @@
                     <div>
                         <label id="img-label" for="img">사진 업로드</label>
                         <input id="img" type="file" accept="image/*">
-                        <button id="twit-btn" type="submit" class="btn btn-primary">짹짹</button>
+                        <button id="twit-btn" type="submit" class="btn btn-primary" style="float: right;">짹짹</button>
                     </div>
                 </form>
             </div>
         {% endif %}
-        <div class="twits">
+        <div class="twits" style="padding: 10px; position: relative; margin-bottom: 10px;">
             <form id="hashtag-form" action="/hashtag">
-                <input name="hasgtag" class="form-control form-control-sm" type="text" placeholder="태그 검색" id="inputSmall">
+                <input name="hashtag" class="form-control form-control-sm" type="text" placeholder="태그 검색" id="inputSmall">
                 <button class="btn btn-primary btn-sm">검색</button>
             </form>
             {% for twit in twits %}
